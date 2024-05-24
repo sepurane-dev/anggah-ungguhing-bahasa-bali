@@ -4615,13 +4615,15 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
+		C3.Plugins.Sprite.Cnds.IsOverlapping,
+		C3.Plugins.Sprite.Acts.SetAnim,
+		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.System.Cnds.PickRandom,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
-		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Behaviors.Tween.Acts.TweenValue,
 		C3.Behaviors.Tween.Cnds.IsPlaying,
 		C3.Plugins.System.Exps.int,
@@ -4756,6 +4758,7 @@ self.C3_JsPropNameTable = [
 	{QuestionIndex: 0},
 	{CorrectAnswer: 0},
 	{Score: 0},
+	{AllowInput: 0},
 	{Timer: 0},
 	{State: 0},
 	{SFXName: 0}
@@ -4975,6 +4978,7 @@ self.C3_ExpressionFuncs = [
 		() => "#000000",
 		() => "font-size",
 		() => "1.75vw",
+		() => 977.5,
 		() => 354,
 		() => 0.94,
 		p => {
@@ -5012,6 +5016,8 @@ self.C3_ExpressionFuncs = [
 			const v2 = p._GetNode(2).GetVar();
 			return () => ((((v0.GetValue()) === (7) ? 1 : 0)) ? ((v1.GetValue() + 5)) : ((v2.GetValue() + 10)));
 		},
+		() => "Correct",
+		() => "Default",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() + 1);
@@ -5068,7 +5074,8 @@ self.C3_ExpressionFuncs = [
 			return () => (n0.ExpObject() + 1920);
 		},
 		() => "Grayscale",
-		() => 10
+		() => 10,
+		() => 20
 ];
 
 
