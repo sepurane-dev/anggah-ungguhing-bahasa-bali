@@ -5010,13 +5010,15 @@ self.C3_ExpressionFuncs = [
 		() => "LatihanSoroh",
 		() => "Test",
 		() => "BGM",
+		() => "Correct",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const v1 = p._GetNode(1).GetVar();
 			const v2 = p._GetNode(2).GetVar();
 			return () => ((((v0.GetValue()) === (7) ? 1 : 0)) ? ((v1.GetValue() + 5)) : ((v2.GetValue() + 10)));
 		},
-		() => "Correct",
+		() => 0.5,
+		() => "Incorrect",
 		() => "Default",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -5046,7 +5048,6 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpInstVar();
 		},
 		() => "POP",
-		() => 0.5,
 		() => "Score",
 		() => "SCORE",
 		p => {
