@@ -4615,15 +4615,15 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.Plugins.Sprite.Cnds.IsOverlapping,
-		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.System.Acts.Wait,
+		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.System.Cnds.PickRandom,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
+		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Behaviors.Tween.Acts.TweenValue,
 		C3.Behaviors.Tween.Cnds.IsPlaying,
 		C3.Plugins.System.Exps.int,
@@ -4733,6 +4733,7 @@ self.C3_JsPropNameTable = [
 	{PanelWaktu: 0},
 	{TimerText: 0},
 	{Audio: 0},
+	{Feedback: 0},
 	{UITexts: 0},
 	{TextInputs: 0},
 	{Buttons: 0},
@@ -4835,6 +4836,7 @@ self.InstanceType = {
 	PanelWaktu: class extends self.ISpriteInstance {},
 	TimerText: class extends self.ITextInstance {},
 	Audio: class extends self.IInstance {},
+	Feedback: class extends self.ISpriteInstance {},
 	UITexts: class extends self.ITextInstance {},
 	TextInputs: class extends self.ITextInputInstance {},
 	Buttons: class extends self.ISpriteInstance {},
@@ -5017,7 +5019,8 @@ self.C3_ExpressionFuncs = [
 			const v2 = p._GetNode(2).GetVar();
 			return () => ((((v0.GetValue()) === (7) ? 1 : 0)) ? ((v1.GetValue() + 5)) : ((v2.GetValue() + 10)));
 		},
-		() => 0.5,
+		() => 0.325,
+		() => "pop-end",
 		() => "Incorrect",
 		() => "Default",
 		p => {
@@ -5048,6 +5051,7 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpInstVar();
 		},
 		() => "POP",
+		() => 0.5,
 		() => "Score",
 		() => "SCORE",
 		p => {
